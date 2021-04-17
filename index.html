@@ -39,6 +39,7 @@
 				camera.lookAt( 0, 0, 0 );
 
 				scene = new THREE.Scene();
+                scene.background = null;
 
 				const light1 = new THREE.HemisphereLight( 0xffffff, 0x000088 );
 				light1.position.set( - 1, 1.5, 1 );
@@ -84,15 +85,16 @@
 				const gui = new GUI();
 				gui.add( mesh, 'count', 0, count );
 
-				renderer = new THREE.WebGLRenderer( { antialias: true } );
+				renderer = new THREE.WebGLRenderer( { antialias: true, alpha: true } );
+                renderer.setClearColor( 0x000000, 0 );
 				renderer.setPixelRatio( window.devicePixelRatio );
 				renderer.setSize( window.innerWidth, window.innerHeight );
-				document.body.appendChild( renderer.domElement );
+				document.body.prepend( renderer.domElement );
 
 				new OrbitControls( camera, renderer.domElement );
 
 				stats = new Stats();
-				document.body.appendChild( stats.dom );
+				document.body.prepend( stats.dom );
 
 				window.addEventListener( 'resize', onWindowResize );
 				document.addEventListener( 'mousemove', onMouseMove );

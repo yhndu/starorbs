@@ -70,7 +70,6 @@ body {
   font-family: "Roboto Mono", monospace;
   margin: 0px;
   color: var(--text-color);
-  background-color: var(--background-color);
 }
 
 a {
@@ -227,7 +226,6 @@ body.home #panel #sections {
   height: var(--header-height);
   padding: 0 0 0 var(--panel-padding);
   position: relative;
-  background: var(--background-color);
 }
 #panel #inputWrapper:after {
   position: absolute;
@@ -267,7 +265,6 @@ body.home #panel #sections {
   background-size: var(--icon-size);
   background-repeat: no-repeat;
   background-position: right center;
-  background-color: var(--background-color);
   padding: 2px 24px 4px 24px;
   -webkit-appearance: none;
   -moz-appearance: none;
