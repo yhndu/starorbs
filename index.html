@@ -10,6 +10,7 @@
 	<body>
         <script text="text/javascript" src="./js/webcam.js"></script>
         <video autoplay id="yourBeautifulFace"></video>
+        <div class="background"></div>
 		<script type="module">
 
 			import * as THREE from './js/libs/three.module.js';
@@ -50,7 +51,12 @@
 				scene.add( light2 );
 
 				const geometry = new THREE.IcosahedronGeometry( 0.5, 3 );
-				const material = new THREE.MeshPhongMaterial( { map: THREE.ImageUtils.loadTexture('images/stars.jpg',THREE.SphericalRefractionMapping) } );
+				const material = new THREE.MeshPhongMaterial( {
+
+          opacity: 0.5,
+          transparent: true,
+
+         } );
 
 				mesh = new THREE.InstancedMesh( geometry, material, count );
 
